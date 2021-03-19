@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+:root{
+    --text-color:Black;
+    --body-color: #fff;
+    --button-color: #90BEDE;
+    --focus-border-color: #3885BC;
+}
+body{
+    margin: 0;
+    height: 100%;
+    color: var(--text-color);
+    background: var(--body-color);
+    font-family: 'DM Sans', sans-serif;
+}
+
+.controls{
+    display: flex;
+    align-items: center;
+
+    height: 100px;
+    min-width: 320px;
+    border-radius: 0px;
+    background-color: var(--body-color);
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+}
+.controls * {
+    margin: 10px;
+}
+#logo{
+    margin-left: 50px;
+}
+#logo h1, #logo small{
+    margin: 0;
+}
+button{
+    min-width: 100px;
+    height: 40px;
+    outline: none;
+    font-weight: Bold;
+    border-radius: 1pc;
+    border-style: none;
+    transition-duration: .2s;
+    background: var(--button-color);
+    font-family: 'DM Sans', sans-serif;
+}
+button:focus, button:hover{
+    border: 3px solid var(--focus-border-color);
+}
+button:hover{
+    transform: scale(1.05);
+}
+button:active{
+    transform: scale(.9);
+}
+
+.generator{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 89vh;
+}
+.capsule{
+    display: flex;
+
+    width: 75%;
+    height: 150px;
+
+    border-radius: 1.5pc;
+    background: var(--body-color);
+    border: 10px solid var(--body-color);
+}
+.color{
+    width: 25%;
+    transition-duration: .2s;
+}
+.color.left{
+    border-radius: 1.5pc 0 0 1.5pc;
+}
+.color.right{
+    border-radius: 0 1.5pc 1.5pc 0;
+}
+.color:hover{
+    transform: scale(1.05);
+}
+.color:active{
+    transform: scale(.95);
+}
+
+.notification{
+    top:100%;
+    left:50%;
+    position: fixed;
+    white-space: pre-line;
+    transition-duration: .5s;
+    transform: translateX(-50%);
+
+    width: 75%;
+    height: 100px;
+    padding-left: 20px;
+    border-radius: 1.5pc;
+    box-sizing: border-box;
+    background: var(--body-color);
+    border: 10px solid var(--body-color);
+}
+.notification.visible{
+    top:85%
+}
+
+/* Alongside with some adjustments for small sized screens, menu and notifications switch place in order to enhance accessibility */
+@media only screen and (max-width: 449px) {
+    .controls{
+        position: absolute;
+        width: 100%;
+        bottom:0;
+    }
+    #logo{
+        margin-left: 50px;
+    }
+    #logo h1{
+        margin:0;
+        font-size:18pt;
+    } 
+    #logo small{
+        margin:0;
+        display: none;
+    }
+    button{
+        width: auto;
+    }
+    .notification{
+        top:-50%;
+        padding-left: 10px;
+    }
+    .notification.visible{
+        top:15%;
+    }
+    .capsule{
+        height: 100px;
+    }
+}

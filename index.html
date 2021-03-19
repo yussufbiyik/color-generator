@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Coolors Clone</title>
+</head>
+<!-- onload="generateColors(4)" automatically generates 4 colors, color count can be changed by increasing or decreasing the number but for now, page only supports 4 colors -->
+<body onload="generateColors(4)">
+
+    <!-- Menu Begin -->
+    <div class="controls">
+        <div id="logo">
+            <h1>Color Generator</h1>
+            <small>Press 'space' to generate palettes or use the generate button.</small>
+        </div>
+        <div>
+            <button onclick="generateColors(4)">Generate</button>
+        </div>
+    </div>
+    <!-- Menu End -->
+
+    <!-- Generator Begin -->
+    <div class="generator">
+        <div class="capsule">
+            <div data-clipboard-target="#color1" data-clipboard-action="copy" id="color1" class="color left"></div>
+            <div data-clipboard-target="#color2" data-clipboard-action="copy" id="color2" class="color"></div>
+            <div data-clipboard-target="#color3" data-clipboard-action="copy" id="color3" class="color"></div>
+            <div data-clipboard-target="#color4" data-clipboard-action="copy" id="color4" class="color right"></div>
+        </div>
+    </div>
+    <!-- Generator End -->
+
+    <!-- Notification Begin -->
+    <div class="notification">
+        <span id="notification-text"></span>
+    </div>
+    <!-- Notification End -->
+
+    <!-- Add Required Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
